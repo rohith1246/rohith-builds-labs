@@ -20,9 +20,9 @@ RECIPIENT_EMAIL = os.environ.get('RECIPIENT_EMAIL', 'rohithbuildslab@gmail.com')
 
 
 # ─── Database ────────────────────────────────────────────────────────────────
+import psycopg2
 
 def get_db():
-    import psycopg2
     conn = psycopg2.connect(DATABASE_URL)
     return conn
 
