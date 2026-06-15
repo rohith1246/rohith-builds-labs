@@ -1,8 +1,6 @@
 import logging
 import os
-import smtplib
-from email.mime.text import MIMEText
-from email.mime.multipart import MIMEMultipart
+
 from flask import Flask, render_template, request, redirect, url_for, flash
 from dotenv import load_dotenv
 
@@ -58,76 +56,8 @@ def init_db():
 # ─── Email ───────────────────────────────────────────────────────────────────
 
 def send_email_notification(data):
-    """Send email notification on new inquiry. Silently skips if not configured."""
-    if not EMAIL_USER or not EMAIL_PASS:
-        logging.warning("Email not configured — skipping notification.")
-        return
-
-    try:
-        msg = MIMEMultipart('alternative')
-        msg['Subject'] = f"New Project Inquiry — {data['name']} | Rohith Builds Labs"
-        msg['From'] = EMAIL_USER
-        msg['To'] = RECIPIENT_EMAIL
-
-        html_body = f"""
-        <html>
-        <body style="margin:0;padding:0;background:#f4f4f4;font-family:Arial,sans-serif;">
-          <div style="max-width:600px;margin:30px auto;background:#fff;border-radius:10px;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,0.1);">
-            <div style="background:#0d1117;padding:24px 30px;display:flex;align-items:center;">
-              <div>
-                <div style="color:#fbbf24;font-size:20px;font-weight:700;letter-spacing:-0.5px;">Rohith Builds Labs</div>
-                <div style="color:#8b949e;font-size:13px;margin-top:2px;">New Project Inquiry Received</div>
-              </div>
-            </div>
-            <div style="padding:30px;">
-              <h2 style="margin:0 0 20px;font-size:22px;color:#0d1117;">Inquiry Details</h2>
-              <table style="width:100%;border-collapse:collapse;">
-                <tr style="border-bottom:1px solid #eee;">
-                  <td style="padding:12px 0;color:#666;font-size:14px;width:40%;">Name</td>
-                  <td style="padding:12px 0;font-weight:600;color:#0d1117;">{data['name']}</td>
-                </tr>
-                <tr style="border-bottom:1px solid #eee;">
-                  <td style="padding:12px 0;color:#666;font-size:14px;">Company</td>
-                  <td style="padding:12px 0;font-weight:600;color:#0d1117;">{data['company'] or '—'}</td>
-                </tr>
-                <tr style="border-bottom:1px solid #eee;">
-                  <td style="padding:12px 0;color:#666;font-size:14px;">Email</td>
-                  <td style="padding:12px 0;font-weight:600;color:#0d1117;">{data['email']}</td>
-                </tr>
-                <tr style="border-bottom:1px solid #eee;">
-                  <td style="padding:12px 0;color:#666;font-size:14px;">Project Type</td>
-                  <td style="padding:12px 0;font-weight:600;color:#0d1117;">{data['project_type']}</td>
-                </tr>
-                <tr style="border-bottom:1px solid #eee;">
-                  <td style="padding:12px 0;color:#666;font-size:14px;">Budget</td>
-                  <td style="padding:12px 0;font-weight:600;color:#0d1117;">{data['budget']}</td>
-                </tr>
-                <tr>
-                  <td style="padding:12px 0;color:#666;font-size:14px;vertical-align:top;">Description</td>
-                  <td style="padding:12px 0;color:#333;line-height:1.6;">{data['description']}</td>
-                </tr>
-              </table>
-              <div style="margin-top:30px;padding:16px;background:#fffbeb;border-left:4px solid #fbbf24;border-radius:4px;">
-                <p style="margin:0;font-size:14px;color:#444;">Reply within 24 hours as promised.</p>
-              </div>
-            </div>
-            <div style="background:#f9f9f9;padding:16px 30px;text-align:center;">
-              <p style="margin:0;font-size:12px;color:#999;">© 2026 Rohith Builds Labs · rohithbuildslab@gmail.com</p>
-            </div>
-          </div>
-        </body>
-        </html>
-        """
-
-        msg.attach(MIMEText(html_body, 'html'))
-
-        with smtplib.SMTP_SSL('smtp.gmail.com', 465) as server:
-            server.login(EMAIL_USER, EMAIL_PASS)
-            server.sendmail(EMAIL_USER, RECIPIENT_EMAIL, msg.as_string())
-        logging.info("Email notification sent.")
-    except Exception as e:
-        logging.error(f"Email send error: {e}")
-
+    logging.info(f"New inquiry from {data['email']} — email notifications disabled.")
+    return
 
 # ─── Routes ──────────────────────────────────────────────────────────────────
 
