@@ -1,0 +1,126 @@
+{% extends "base.html" %}
+
+{% block title %}Services — Rohith Builds Labs{% endblock %}
+{% block meta_desc %}Rohith Builds Labs offers AI agent development, automation systems, backend engineering, and full AI platform development for businesses ready to move fast.{% endblock %}
+
+{% block content %}
+
+<!-- ── Page Hero ──────────────────────────────────────────── -->
+<section class="page-hero">
+  <div class="container">
+    <div class="page-hero-content">
+      <div class="label">Services</div>
+      <h1>What We Build<br />For You</h1>
+      <p>Four focused service areas. Each one backed by deployed systems and real-world experience — not theoretical knowledge.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ── Services Grid ──────────────────────────────────────── -->
+<div class="container">
+  <div class="services-grid">
+
+    <!-- Service 1: AI Agent Development -->
+    <div class="service-card" id="service-ai-agents">
+      <div class="service-icon">🤖</div>
+      <h3>AI Agent Development</h3>
+      <p>Custom autonomous agents that research, decide, and act without human intervention. Built to run in production — not just to demo.</p>
+      <div class="service-examples-label">Examples</div>
+      <ul class="service-examples">
+        <li>Research agents that synthesize web sources</li>
+        <li>Support agents that handle tier-1 queries</li>
+        <li>Data collection and enrichment agents</li>
+        <li>Internal workflow automation agents</li>
+      </ul>
+    </div>
+
+    <!-- Service 2: Automation Systems -->
+    <div class="service-card" id="service-automation">
+      <div class="service-icon">⚙️</div>
+      <h3>Automation Systems</h3>
+      <p>End-to-end automation that eliminates manual work from your business. From data pipelines to communication automation — deployed and monitored.</p>
+      <div class="service-examples-label">Examples</div>
+      <ul class="service-examples">
+        <li>Job and data aggregation pipelines</li>
+        <li>Email and outreach automation</li>
+        <li>Automated reporting systems</li>
+        <li>Web scraping and data pipelines</li>
+      </ul>
+    </div>
+
+    <!-- Service 3: Backend Engineering -->
+    <div class="service-card" id="service-backend">
+      <div class="service-icon">🔧</div>
+      <h3>Backend Engineering</h3>
+      <p>Production-grade APIs, databases, and dashboards built to scale. Proper error handling, monitoring, and architecture — not just a prototype.</p>
+      <div class="service-examples-label">Examples</div>
+      <ul class="service-examples">
+        <li>REST APIs with proper auth</li>
+        <li>PostgreSQL schema design and optimization</li>
+        <li>Admin dashboards and internal tools</li>
+        <li>Authentication and user management systems</li>
+      </ul>
+    </div>
+
+    <!-- Service 4: AI Platform Development -->
+    <div class="service-card" id="service-platforms">
+      <div class="service-icon">🚀</div>
+      <h3>AI Platform Development</h3>
+      <p>Full AI-powered platforms from zero to deployed. We handle the entire stack — architecture, backend, frontend, AI integration, and launch.</p>
+      <div class="service-examples-label">Examples</div>
+      <ul class="service-examples">
+        <li>AI-powered learning platforms</li>
+        <li>Internal knowledge and tool platforms</li>
+        <li>SaaS products with AI at the core</li>
+        <li>Customer-facing AI applications</li>
+      </ul>
+    </div>
+
+  </div>
+</div>
+
+<!-- ── How We Work ────────────────────────────────────────── -->
+<section class="section" style="border-top:1px solid var(--border);">
+  <div class="container">
+    <div class="section-header">
+      <div class="label">Process</div>
+      <h2 class="headline">How We Approach Projects</h2>
+    </div>
+
+    <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--border); border:1px solid var(--border); border-radius:16px; overflow:hidden;">
+
+      <div style="background:var(--surface); padding:32px 28px;">
+        <div style="font-family:'JetBrains Mono',monospace; font-size:0.75rem; color:var(--text-dim); margin-bottom:12px;">01</div>
+        <h3 style="font-size:1.0625rem; font-weight:700; margin-bottom:8px;">Understand the problem</h3>
+        <p style="font-size:0.875rem; color:var(--text-muted); line-height:1.6;">We start with what you're actually trying to solve — not what technology to use. Most problems are simpler than they appear.</p>
+      </div>
+
+      <div style="background:var(--surface); padding:32px 28px;">
+        <div style="font-family:'JetBrains Mono',monospace; font-size:0.75rem; color:var(--text-dim); margin-bottom:12px;">02</div>
+        <h3 style="font-size:1.0625rem; font-weight:700; margin-bottom:8px;">Build the simplest working system</h3>
+        <p style="font-size:0.875rem; color:var(--text-muted); line-height:1.6;">No over-engineering. We build what needs to exist to solve the problem — then iterate based on real usage, not assumptions.</p>
+      </div>
+
+      <div style="background:var(--surface); padding:32px 28px;">
+        <div style="font-family:'JetBrains Mono',monospace; font-size:0.75rem; color:var(--text-dim); margin-bottom:12px;">03</div>
+        <h3 style="font-size:1.0625rem; font-weight:700; margin-bottom:8px;">Deploy. Monitor. Improve.</h3>
+        <p style="font-size:0.875rem; color:var(--text-muted); line-height:1.6;">A system that isn't deployed doesn't exist. We get things live, then refine — not the other way around.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── CTA ────────────────────────────────────────────────── -->
+<section class="section-sm" style="border-top:1px solid var(--border); background:var(--surface);">
+  <div class="container" style="text-align:center;">
+    <div class="label" style="margin-bottom:12px;">Get Started</div>
+    <h2 style="font-size:2rem; font-weight:700; letter-spacing:-0.02em; margin-bottom:12px;">Ready to start a project?</h2>
+    <p style="color:var(--text-muted); margin-bottom:28px; max-width:440px; margin-left:auto; margin-right:auto;">
+      Tell us what you're building. We'll tell you if we can help — and how.
+    </p>
+    <a href="/contact" class="btn btn-primary btn-lg" id="services-cta-btn">Start a Project</a>
+  </div>
+</section>
+
+{% endblock %}

@@ -1,0 +1,341 @@
+{% extends "base.html" %}
+
+{% block title %}Work — Rohith Builds Labs{% endblock %}
+{% block meta_desc %}Case studies from Rohith Builds Labs: AI platforms, autonomous agents, automation systems, and content moderation tools — all deployed and in production.{% endblock %}
+
+{% block content %}
+
+<!-- ── Page Hero ──────────────────────────────────────────── -->
+<section class="page-hero">
+  <div class="container">
+    <div class="page-hero-content">
+      <div class="label">Case Studies</div>
+      <h1>Deployed Systems.<br />Real Results.</h1>
+      <p>Every project listed here is live, in production, and solving a genuine problem. No mock-ups, no demos-only.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ── Case Studies ───────────────────────────────────────── -->
+<section class="case-studies">
+  <div class="container">
+
+    <!-- Case Study 1: Rohith Builds Platform -->
+    <article class="case-study" id="case-rohith-builds">
+      <!-- Video Preview -->
+      <div class="case-video-preview" data-video="{{ url_for('static', filename='videos/rohith-builds-platform.mp4') }}" data-title="Rohith Builds Platform — Demo">
+        <div class="case-video-overlay">
+          <div class="play-btn" role="button" tabindex="0" aria-label="Watch demo for Rohith Builds Platform">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="12" cy="12" r="11" stroke="currentColor" stroke-width="1.5"/>
+              <path d="M10 8.5L16 12L10 15.5V8.5Z" fill="currentColor"/>
+            </svg>
+            <span>Watch Demo</span>
+          </div>
+          <div class="video-badge">
+            <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><circle cx="5" cy="5" r="4" fill="#3fb950"/></svg>
+            Video Demo
+          </div>
+        </div>
+      </div>
+
+      <div class="case-study-header">
+        <div>
+          <div class="case-study-meta">
+            <span class="case-num">01</span>
+            <span class="case-tag">AI Platform</span>
+          </div>
+          <h2>Rohith Builds Platform</h2>
+        </div>
+        <a href="https://rohith-builds.onrender.com" target="_blank" rel="noopener" class="case-link" id="cs1-link">
+          Live Platform
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 10L10 2M10 2H5M10 2v5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </a>
+      </div>
+
+      <div class="case-body">
+        <div class="case-col">
+          <div class="case-col-label">Challenge</div>
+          <p>No free, structured Python→AI learning path existed for Indian developers. Existing resources were scattered, expensive, or not contextually relevant.</p>
+        </div>
+        <div class="case-col">
+          <div class="case-col-label">Solution</div>
+          <p>Built a full learning platform with an AI tutor powered by Groq, 100 structured lessons, and a live job aggregator pulling 53+ curated junior developer roles daily.</p>
+        </div>
+        <div class="case-col">
+          <div class="case-col-label">Tech Stack</div>
+          <div class="case-tech">
+            <span class="tech-tag">Python</span>
+            <span class="tech-tag">Flask</span>
+            <span class="tech-tag">PostgreSQL</span>
+            <span class="tech-tag">Groq</span>
+            <span class="tech-tag">Render</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="case-results">
+        <p><strong>Results:</strong> Live platform with real users. 100+ structured lessons published. 53+ jobs updated daily via automated aggregator. Full authentication + admin system.</p>
+      </div>
+    </article>
+
+    <!-- Case Study 2: Autonomous Job Aggregator -->
+    <article class="case-study" id="case-job-aggregator">
+      <!-- Video Preview -->
+      <div class="case-video-preview" data-video="{{ url_for('static', filename='videos/job-aggregator.mp4') }}" data-title="Autonomous Job Aggregator — Demo">
+        <div class="case-video-overlay">
+          <div class="play-btn" role="button" tabindex="0" aria-label="Watch demo for Autonomous Job Aggregator">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="12" cy="12" r="11" stroke="currentColor" stroke-width="1.5"/>
+              <path d="M10 8.5L16 12L10 15.5V8.5Z" fill="currentColor"/>
+            </svg>
+            <span>Watch Demo</span>
+          </div>
+          <div class="video-badge">
+            <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><circle cx="5" cy="5" r="4" fill="#3fb950"/></svg>
+            Video Demo
+          </div>
+        </div>
+      </div>
+
+      <div class="case-study-header">
+        <div>
+          <div class="case-study-meta">
+            <span class="case-num">02</span>
+            <span class="case-tag">Automation</span>
+          </div>
+          <h2>Autonomous Job Aggregator</h2>
+        </div>
+      </div>
+
+      <div class="case-body">
+        <div class="case-col">
+          <div class="case-col-label">Challenge</div>
+          <p>Junior developers waste hours manually scrolling through job boards dominated by senior-level posts requiring 5+ years of experience they don't have.</p>
+        </div>
+        <div class="case-col">
+          <div class="case-col-label">Solution</div>
+          <p>AI agent scrapes LinkedIn, Naukri, and Indeed via RSS gateways. Groq filters junior-appropriate roles, deduplicates results, and auto-inserts into PostgreSQL daily.</p>
+        </div>
+        <div class="case-col">
+          <div class="case-col-label">Tech Stack</div>
+          <div class="case-tech">
+            <span class="tech-tag">Python</span>
+            <span class="tech-tag">Groq</span>
+            <span class="tech-tag">psycopg2</span>
+            <span class="tech-tag">RSS</span>
+            <span class="tech-tag">AOL Gateway</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="case-results">
+        <p><strong>Results:</strong> 53+ curated junior developer jobs updated every day. Deduplication system prevents repeat entries. Runs fully autonomously without manual intervention.</p>
+      </div>
+    </article>
+
+    <!-- Case Study 3: AI Research Agent -->
+    <article class="case-study" id="case-research-agent">
+      <!-- Video Preview -->
+      <div class="case-video-preview" data-video="{{ url_for('static', filename='videos/ai-research-agent.mp4') }}" data-title="AI Research Agent — Demo">
+        <div class="case-video-overlay">
+          <div class="play-btn" role="button" tabindex="0" aria-label="Watch demo for AI Research Agent">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="12" cy="12" r="11" stroke="currentColor" stroke-width="1.5"/>
+              <path d="M10 8.5L16 12L10 15.5V8.5Z" fill="currentColor"/>
+            </svg>
+            <span>Watch Demo</span>
+          </div>
+          <div class="video-badge">
+            <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><circle cx="5" cy="5" r="4" fill="#3fb950"/></svg>
+            Video Demo
+          </div>
+        </div>
+      </div>
+
+      <div class="case-study-header">
+        <div>
+          <div class="case-study-meta">
+            <span class="case-num">03</span>
+            <span class="case-tag">AI Agent</span>
+          </div>
+          <h2>AI Research Agent</h2>
+        </div>
+        <a href="https://github.com/rohithvuppula" target="_blank" rel="noopener" class="case-link" id="cs3-link">
+          GitHub
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 10L10 2M10 2H5M10 2v5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </a>
+      </div>
+
+      <div class="case-body">
+        <div class="case-col">
+          <div class="case-col-label">Challenge</div>
+          <p>Manual research for any topic takes hours of web browsing, source evaluation, and synthesis. Knowledge workers were spending more time gathering than thinking.</p>
+        </div>
+        <div class="case-col">
+          <div class="case-col-label">Solution</div>
+          <p>Autonomous agent autonomously searches the web via DuckDuckGo API, synthesizes multiple sources with Groq, and generates a structured, cited research report automatically.</p>
+        </div>
+        <div class="case-col">
+          <div class="case-col-label">Tech Stack</div>
+          <div class="case-tech">
+            <span class="tech-tag">Python</span>
+            <span class="tech-tag">Groq</span>
+            <span class="tech-tag">DuckDuckGo API</span>
+            <span class="tech-tag">Flask</span>
+            <span class="tech-tag">Render</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="case-results">
+        <p><strong>Results:</strong> Deployed and publicly accessible. Generates structured research reports in under 60 seconds. Fully autonomous — no human search queries needed after initial prompt.</p>
+      </div>
+    </article>
+
+    <!-- Case Study 4: NSFW Shield -->
+    <article class="case-study" id="case-nsfw-shield">
+      <!-- Video Preview -->
+      <div class="case-video-preview" data-video="{{ url_for('static', filename='videos/nsfw-shield.mp4') }}" data-title="NSFW Shield — Demo">
+        <div class="case-video-overlay">
+          <div class="play-btn" role="button" tabindex="0" aria-label="Watch demo for NSFW Shield">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="12" cy="12" r="11" stroke="currentColor" stroke-width="1.5"/>
+              <path d="M10 8.5L16 12L10 15.5V8.5Z" fill="currentColor"/>
+            </svg>
+            <span>Watch Demo</span>
+          </div>
+          <div class="video-badge">
+            <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><circle cx="5" cy="5" r="4" fill="#3fb950"/></svg>
+            Video Demo
+          </div>
+        </div>
+      </div>
+
+      <div class="case-study-header">
+        <div>
+          <div class="case-study-meta">
+            <span class="case-num">04</span>
+            <span class="case-tag">ML · Browser</span>
+          </div>
+          <h2>NSFW Shield</h2>
+        </div>
+        <a href="https://nsfw-detector-ehjf.vercel.app" target="_blank" rel="noopener" class="case-link" id="cs4-link">
+          Live Tool
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 10L10 2M10 2H5M10 2v5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </a>
+      </div>
+
+      <div class="case-body">
+        <div class="case-col">
+          <div class="case-col-label">Challenge</div>
+          <p>Content moderation typically requires expensive server infrastructure, user uploads, and privacy risks. Small platforms can't afford enterprise-grade moderation APIs.</p>
+        </div>
+        <div class="case-col">
+          <div class="case-col-label">Solution</div>
+          <p>100% browser-based ML model using TensorFlow.js + MobileNet. Image never leaves the device. Zero server uploads, zero backend costs, full privacy preserved.</p>
+        </div>
+        <div class="case-col">
+          <div class="case-col-label">Tech Stack</div>
+          <div class="case-tech">
+            <span class="tech-tag">TensorFlow.js</span>
+            <span class="tech-tag">MobileNet</span>
+            <span class="tech-tag">Vercel</span>
+            <span class="tech-tag">JavaScript</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="case-results">
+        <p><strong>Results:</strong> Live and accessible. 87% classification accuracy. 27 deployments to date. Runs entirely in-browser — no server costs, no privacy concerns.</p>
+      </div>
+    </article>
+
+    <!-- Case Study 5: Reddit Reply Automation -->
+    <article class="case-study" id="case-reddit-automation">
+      <!-- Video Preview -->
+      <div class="case-video-preview" data-video="{{ url_for('static', filename='videos/reddit-automation.mp4') }}" data-title="Reddit Reply Automation System — Demo">
+        <div class="case-video-overlay">
+          <div class="play-btn" role="button" tabindex="0" aria-label="Watch demo for Reddit Reply Automation">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="12" cy="12" r="11" stroke="currentColor" stroke-width="1.5"/>
+              <path d="M10 8.5L16 12L10 15.5V8.5Z" fill="currentColor"/>
+            </svg>
+            <span>Watch Demo</span>
+          </div>
+          <div class="video-badge">
+            <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><circle cx="5" cy="5" r="4" fill="#3fb950"/></svg>
+            Video Demo
+          </div>
+        </div>
+      </div>
+
+      <div class="case-study-header">
+        <div>
+          <div class="case-study-meta">
+            <span class="case-num">05</span>
+            <span class="case-tag">Automation · AI</span>
+          </div>
+          <h2>Reddit Reply Automation System</h2>
+        </div>
+      </div>
+
+      <div class="case-body">
+        <div class="case-col">
+          <div class="case-col-label">Challenge</div>
+          <p>Manual community marketing on Reddit takes hours daily — monitoring subreddits, identifying relevant threads, and crafting genuine value-first replies at scale.</p>
+        </div>
+        <div class="case-col">
+          <div class="case-col-label">Solution</div>
+          <p>RSS feed scraper monitors target subreddits continuously. Groq AI reads thread context and drafts personalized, value-first reply suggestions — ready to review and post.</p>
+        </div>
+        <div class="case-col">
+          <div class="case-col-label">Tech Stack</div>
+          <div class="case-tech">
+            <span class="tech-tag">Python</span>
+            <span class="tech-tag">Groq</span>
+            <span class="tech-tag">RSS</span>
+            <span class="tech-tag">Flask</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="case-results">
+        <p><strong>Results:</strong> Background harvester queue maintains 40 ready-to-post reply drafts at all times. Zero manual thread-hunting. Human reviews and approves before posting.</p>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<!-- ── CTA ────────────────────────────────────────────────── -->
+<section class="section-sm" style="border-top:1px solid var(--border); background:var(--surface);">
+  <div class="container" style="text-align:center;">
+    <div class="label" style="margin-bottom:12px;">Ready to Build?</div>
+    <h2 style="font-size:2rem; font-weight:700; letter-spacing:-0.02em; margin-bottom:12px;">Have a system that needs building?</h2>
+    <p style="color:var(--text-muted); margin-bottom:28px; max-width:480px; margin-left:auto; margin-right:auto;">We bring the same pragmatic, deployed-first approach to every project.</p>
+    <a href="/contact" class="btn btn-primary btn-lg" id="work-cta-btn">Start a Project</a>
+  </div>
+</section>
+
+<!-- ── Video Lightbox Modal ──────────────────────────────── -->
+<div class="video-lightbox" id="video-lightbox" role="dialog" aria-modal="true" aria-label="Video demo player">
+  <div class="video-lightbox-backdrop" id="lightbox-backdrop"></div>
+  <div class="video-lightbox-inner">
+    <div class="video-lightbox-header">
+      <span class="video-lightbox-title" id="lightbox-title"></span>
+      <button class="video-lightbox-close" id="lightbox-close" aria-label="Close video">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+          <path d="M4 4L16 16M16 4L4 16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </button>
+    </div>
+    <div class="video-lightbox-player">
+      <video id="lightbox-video" controls playsinline preload="metadata">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

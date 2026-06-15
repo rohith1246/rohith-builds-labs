@@ -1,0 +1,87 @@
+﻿{% extends "base.html" %}
+
+{% block title %}{{ post.title }} — Rohith Builds Labs{% endblock %}
+{% block meta_desc %}{{ post.summary }}{% endblock %}
+
+{% block content %}
+
+<!-- Page Hero -->
+<section class="page-hero">
+  <div class="container">
+    <div class="page-hero-content" style="max-width:800px;">
+      <div class="label" style="margin-bottom:14px;">
+        <a href="/blog" style="color:var(--yellow); text-decoration:none;">← Blog</a>
+        &nbsp;·&nbsp; {{ post.category }}
+      </div>
+      <h1 style="font-size:clamp(1.75rem, 4vw, 3rem);">{{ post.title }}</h1>
+      <div style="display:flex; align-items:center; gap:16px; margin-top:20px; flex-wrap:wrap;">
+        <span style="font-size:0.875rem; color:var(--text-muted);">📅 {{ post.date }}</span>
+        <span style="font-size:0.875rem; color:var(--text-muted);">⏱ {{ post.reading_time }}</span>
+        <span style="font-size:0.875rem; color:var(--text-dim);">By Rohith · Rohith Builds Labs</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Post Body + Sidebar -->
+<div class="container">
+  <div class="post-layout">
+
+    <!-- Article Body -->
+    <article class="post-body">
+      {{ post.content | safe }}
+
+      <!-- Back link -->
+      <div style="margin-top:56px; padding-top:32px; border-top:1px solid var(--border);">
+        <a href="/blog" style="display:inline-flex; align-items:center; gap:8px;
+           font-size:0.9rem; font-weight:600; color:var(--text-muted); text-decoration:none;
+           transition: color 0.2s ease;"
+           onmouseover="this.style.color='var(--yellow)'"
+           onmouseout="this.style.color='var(--text-muted)'">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+            <path d="M12 7H2M6 3L2 7l4 4" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          Back to all posts
+        </a>
+      </div>
+    </article>
+
+    <!-- Sidebar -->
+    <aside class="post-sidebar">
+
+      <!-- CTA card -->
+      <div class="post-sidebar-card" style="background:var(--yellow-glow); border-color:rgba(251,191,36,0.2);">
+        <h4 style="color:var(--yellow);">Start a project</h4>
+        <p style="font-size:0.875rem; color:var(--text-muted); line-height:1.6; margin-bottom:16px;">
+          Building something? We bring the same pragmatic approach to every client system.
+        </p>
+        <a href="/contact" class="btn btn-primary" style="width:100%; justify-content:center;"
+           id="post-cta-btn">Get in touch</a>
+      </div>
+
+      <!-- More posts -->
+      {% if other_posts %}
+      <div class="post-sidebar-card" style="margin-top:16px;">
+        <h4>More from the blog</h4>
+        {% for p in other_posts %}
+        <a href="/blog/{{ p.slug }}" class="post-sidebar-link">{{ p.title }}</a>
+        {% endfor %}
+      </div>
+      {% endif %}
+
+      <!-- About card -->
+      <div class="post-sidebar-card" style="margin-top:16px;">
+        <h4>About Labs</h4>
+        <p style="font-size:0.875rem; color:var(--text-muted); line-height:1.6; margin-bottom:12px;">
+          Rohith Builds Labs builds AI agents, automation systems, and intelligent software for real businesses.
+        </p>
+        <a href="/about" style="font-size:0.875rem; color:var(--yellow); font-weight:600; text-decoration:none;">
+          Learn more →
+        </a>
+      </div>
+
+    </aside>
+  </div>
+</div>
+
+{% endblock %}

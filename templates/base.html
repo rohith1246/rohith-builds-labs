@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="{% block meta_desc %}Rohith Builds Labs — Building AI systems, automation platforms, and intelligent software for real businesses.{% endblock %}" />
+  <title>{% block title %}Rohith Builds Labs — Building AI Systems That Work{% endblock %}</title>
+
+  <!-- Canonical -->
+  <link rel="canonical" href="{{ request.url }}" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="{{ url_for('static', filename='images/logo.png') }}" />
+
+  <!-- Open Graph / Social -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Rohith Builds Labs" />
+  <meta property="og:url" content="{{ request.url }}" />
+  <meta property="og:title" content="{% block og_title %}{% block _title_inner %}Rohith Builds Labs{% endblock %}{% endblock %}" />
+  <meta property="og:description" content="{% block og_desc %}Building AI systems, automation platforms, and intelligent software that work for real businesses.{% endblock %}" />
+  <meta property="og:image" content="{{ url_for('static', filename='images/logo.png', _external=True) }}" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="{% block tw_title %}Rohith Builds Labs{% endblock %}" />
+  <meta name="twitter:description" content="{% block tw_desc %}Building AI systems, automation platforms, and intelligent software that work for real businesses.{% endblock %}" />
+  <meta name="twitter:image" content="{{ url_for('static', filename='images/logo.png', _external=True) }}" />
+
+  <!-- Google Fonts (non-blocking) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" />
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+</head>
+<body>
+
+<!-- ── Navbar ─────────────────────────────────────────────── -->
+<nav class="navbar" role="navigation" aria-label="Main navigation">
+  <div class="container">
+    <a href="/" class="nav-logo" aria-label="Rohith Builds Labs Home">
+      <img src="{{ url_for('static', filename='images/logo.png') }}"
+           alt="Rohith Builds Labs logo"
+           width="40" height="40"
+           onerror="this.style.display='none'" />
+      <div class="nav-logo-text">
+        <span class="nav-logo-name">Rohith Builds Labs</span>
+        <span class="nav-logo-sub">AI Systems</span>
+      </div>
+    </a>
+
+    <div class="nav-links">
+      <a href="/work" id="nav-work">Work</a>
+      <a href="/services" id="nav-services">Services</a>
+      <a href="/blog" id="nav-blog">Blog</a>
+      <a href="/about" id="nav-about">About</a>
+      <a href="/contact" id="nav-contact-link">Contact</a>
+    </div>
+
+    <a href="/contact" class="btn btn-primary nav-cta" id="nav-cta-btn">Start a Project</a>
+
+    <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- Mobile Nav -->
+<div class="nav-mobile" id="nav-mobile" role="navigation" aria-label="Mobile navigation">
+  <a href="/work">Work</a>
+  <a href="/services">Services</a>
+  <a href="/blog">Blog</a>
+  <a href="/about">About</a>
+  <a href="/contact">Contact</a>
+  <a href="/contact" class="btn btn-primary">Start a Project</a>
+</div>
+
+<!-- ── Flash Messages ─────────────────────────────────────── -->
+{% with messages = get_flashed_messages(with_categories=true) %}
+  {% if messages %}
+    <div class="flash-messages">
+      <div class="container">
+        {% for category, message in messages %}
+          <div class="flash flash-{{ category }}" role="alert">
+            {% if category == 'success' %}✓{% else %}⚠{% endif %}
+            {{ message }}
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  {% endif %}
+{% endwith %}
+
+<!-- ── Page Content ───────────────────────────────────────── -->
+{% block content %}{% endblock %}
+
+<!-- ── Footer ─────────────────────────────────────────────── -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <!-- Brand -->
+      <div class="footer-brand">
+        <a href="/" class="nav-logo" style="margin-bottom:14px;">
+          <img src="{{ url_for('static', filename='images/logo.png') }}"
+               alt="Rohith Builds Labs"
+               width="36" height="36"
+               onerror="this.style.display='none'" />
+          <div class="nav-logo-text">
+            <span class="nav-logo-name">Rohith Builds Labs</span>
+            <span class="nav-logo-sub">AI Systems</span>
+          </div>
+        </a>
+        <p class="footer-tagline">Building AI systems, automation platforms, and intelligent software that work for real businesses.</p>
+        <a href="mailto:rohithbuildslab@gmail.com" class="footer-email">rohithbuildslab@gmail.com</a>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="/work">Our Work</a></li>
+          <li><a href="/services">Services</a></li>
+          <li><a href="/about">About</a></li>
+          <li><a href="/contact">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Services -->
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="/services">AI Agent Development</a></li>
+          <li><a href="/services">Automation Systems</a></li>
+          <li><a href="/services">Backend Engineering</a></li>
+          <li><a href="/services">AI Platform Development</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2026 Rohith Builds Labs. All rights reserved.</p>
+      <div class="footer-ecosystem">
+        <span>Part of the</span>
+        <a href="https://rohith-builds.onrender.com" target="_blank" rel="noopener">Rohith Builds Ecosystem</a>
+        <span>↗</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- JS -->
+<script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,148 @@
+{% extends "base.html" %}
+
+{% block title %}About — Rohith Builds Labs{% endblock %}
+{% block meta_desc %}Rohith Builds Labs builds practical AI systems — agents, automation, and platforms that solve real business problems. Practical over theoretical. Deployed over planned.{% endblock %}
+
+{% block content %}
+
+<!-- ── Page Hero ──────────────────────────────────────────── -->
+<section class="page-hero">
+  <div class="container">
+    <div class="page-hero-content">
+      <div class="label">About</div>
+      <h1>Building Practical<br />AI Systems</h1>
+      <p>We build software that gets deployed, used, and maintained — not systems that live in slide decks.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ── Mission Content ────────────────────────────────────── -->
+<section class="section">
+  <div class="container">
+    <div class="about-content-grid" style="display:grid; grid-template-columns:1fr 400px; gap:80px; align-items:start;">
+
+      <div class="about-content" style="padding:0;">
+        <h2>What we build and why</h2>
+        <p>
+          Rohith Builds Labs exists to close the gap between AI research and real business utility. Most AI development
+          today produces impressive demos and academic benchmarks — but very little that actually runs in production,
+          handles edge cases, and delivers consistent value to the people using it.
+        </p>
+        <p>
+          We build AI agents that take autonomous action, automation systems that eliminate manual work, and full platforms
+          that bring AI capabilities to users who need them. Every system we ship is deployed, monitored, and maintained —
+          not handed off as a prototype.
+        </p>
+
+        <h2 style="margin-top:40px;">How we approach problems</h2>
+        <p>
+          Every project starts with the same question: what is the real problem here? Not what technology to use, not
+          what's trending — what actually needs to be solved. We then build the simplest system that solves it, deploy it,
+          and improve based on real-world usage data instead of assumptions.
+        </p>
+        <p>
+          This approach produces systems that work reliably in messy, real-world conditions — not just in controlled
+          testing environments. We've built job aggregators, AI tutors, research agents, and content moderation tools.
+          Each one was designed around the problem first, the stack second.
+        </p>
+
+        <h2 style="margin-top:40px;">What we believe about AI</h2>
+        <p>
+          AI is a tool. A powerful, increasingly capable tool — but a tool nonetheless. The businesses that will extract
+          genuine value from AI over the next decade are not the ones chasing every new model release or rewriting their
+          stack for every framework update. They're the ones that identify the right problems, build focused systems, and
+          integrate AI where it actually creates leverage.
+        </p>
+        <p>
+          We believe in AI systems that outlast trends. That means clean architecture, proper error handling, documented
+          codebases, and systems designed to be maintained — not thrown away six months later.
+        </p>
+      </div>
+
+      <!-- Sidebar stats -->
+      <div>
+        <div style="background:var(--surface); border:1px solid var(--border); border-radius:var(--radius-xl); padding:32px; margin-bottom:20px;">
+          <div class="label" style="margin-bottom:20px;">By the numbers</div>
+          <div style="display:flex; flex-direction:column; gap:20px;">
+            <div>
+              <div style="font-size:2.5rem; font-weight:800; color:var(--yellow); letter-spacing:-0.03em; line-height:1;" data-count="5" data-suffix="+">5+</div>
+              <div style="font-size:0.875rem; color:var(--text-muted); margin-top:4px;">AI systems in production</div>
+            </div>
+            <div style="height:1px; background:var(--border);"></div>
+            <div>
+              <div style="font-size:2.5rem; font-weight:800; color:var(--yellow); letter-spacing:-0.03em; line-height:1;" data-count="53" data-suffix="+">53+</div>
+              <div style="font-size:0.875rem; color:var(--text-muted); margin-top:4px;">jobs aggregated every day</div>
+            </div>
+            <div style="height:1px; background:var(--border);"></div>
+            <div>
+              <div style="font-size:2.5rem; font-weight:800; color:var(--yellow); letter-spacing:-0.03em; line-height:1;" data-count="100" data-suffix="+">100+</div>
+              <div style="font-size:0.875rem; color:var(--text-muted); margin-top:4px;">technical lessons created</div>
+            </div>
+            <div style="height:1px; background:var(--border);"></div>
+            <div>
+              <div style="font-size:2.5rem; font-weight:800; color:var(--yellow); letter-spacing:-0.03em; line-height:1;" data-count="3">3</div>
+              <div style="font-size:0.875rem; color:var(--text-muted); margin-top:4px;">deployed platforms live</div>
+            </div>
+          </div>
+        </div>
+
+        <div style="background:var(--yellow-glow); border:1px solid rgba(251,191,36,0.2); border-radius:var(--radius-xl); padding:28px;">
+          <div style="font-size:0.875rem; font-weight:600; color:var(--yellow); margin-bottom:8px;">Part of Rohith Builds</div>
+          <p style="font-size:0.875rem; color:var(--text-muted); line-height:1.6; margin-bottom:16px;">
+            Rohith Builds Labs is the client-facing side of the Rohith Builds ecosystem — where the same systems built for
+            the platform are available as services.
+          </p>
+          <a href="https://rohith-builds.onrender.com" target="_blank" rel="noopener"
+             style="font-size:0.875rem; color:var(--yellow); font-weight:600; display:flex; align-items:center; gap:6px;">
+            Visit Rohith Builds
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 10L10 2M10 2H5M10 2v5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── Philosophy ─────────────────────────────────────────── -->
+<section class="philosophy" style="border-top:1px solid var(--border);">
+  <div class="container" style="padding-top:80px;">
+    <div class="philosophy-header">
+      <div class="label" style="margin-bottom:12px;">Philosophy</div>
+      <h2 class="headline">How we think</h2>
+    </div>
+
+    <div class="philosophy-grid">
+
+      <div class="philosophy-card" id="phil-practical">
+        <div class="phil-num">01</div>
+        <h3>Practical over theoretical</h3>
+        <p>We care about what works in production, not what's theoretically elegant. A running system that handles edge cases beats a perfect architecture that hasn't shipped.</p>
+      </div>
+
+      <div class="philosophy-card" id="phil-deployed">
+        <div class="phil-num">02</div>
+        <h3>Deployed over planned</h3>
+        <p>Planning is necessary. Endless planning is avoidance. We ship early, learn from real usage, and iterate — instead of trying to design every scenario in advance.</p>
+      </div>
+
+      <div class="philosophy-card" id="phil-systems">
+        <div class="phil-num">03</div>
+        <h3>Systems that outlast trends</h3>
+        <p>Good software doesn't need to be rewritten every 18 months. We build with maintainability in mind — clean code, documented choices, and architecture that makes sense to the next person.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── CTA ────────────────────────────────────────────────── -->
+<section class="section-sm" style="background:var(--surface); border-top:1px solid var(--border);">
+  <div class="container" style="text-align:center;">
+    <h2 style="font-size:1.75rem; font-weight:700; letter-spacing:-0.02em; margin-bottom:12px;">Want to work with us?</h2>
+    <p style="color:var(--text-muted); margin-bottom:28px;">Tell us about your project. We respond within 24 hours.</p>
+    <a href="/contact" class="btn btn-primary btn-lg" id="about-cta-btn">Start a Project</a>
+  </div>
+</section>
+
+{% endblock %}

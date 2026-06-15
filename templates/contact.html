@@ -1,0 +1,196 @@
+{% extends "base.html" %}
+
+{% block title %}Contact — Rohith Builds Labs{% endblock %}
+{% block meta_desc %}Start a project with Rohith Builds Labs. We build AI agents, automation systems, and AI platforms. Tell us your challenge — we'll respond within 24 hours.{% endblock %}
+
+{% block content %}
+
+<!-- ── Page Hero ──────────────────────────────────────────── -->
+<section class="page-hero">
+  <div class="container">
+    <div class="page-hero-content">
+      <div class="label">Contact</div>
+      <h1>Start a Project</h1>
+      <p>Tell us what you're building or what problem you're trying to solve. We review every inquiry and respond within 24 hours.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ── Contact Layout ─────────────────────────────────────── -->
+<section>
+  <div class="container">
+    <div class="contact-layout">
+
+      <!-- ── Form ─────────────────────────────────────────── -->
+      <div class="contact-form-wrap">
+        <h2>Project Inquiry</h2>
+        <p>Fill out the form below and we'll get back to you with our assessment and how we can help.</p>
+
+        <form id="contact-form" method="POST" action="/contact" novalidate>
+
+          <div class="form-grid">
+
+            <!-- Name -->
+            <div class="form-group">
+              <label for="name">Name <span class="req">*</span></label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                placeholder="Your full name"
+                value="{{ form_data.get('name', '') }}"
+                required
+                autocomplete="name"
+              />
+            </div>
+
+            <!-- Company -->
+            <div class="form-group">
+              <label for="company">Company / Organization</label>
+              <input
+                type="text"
+                id="company"
+                name="company"
+                placeholder="Your company (optional)"
+                value="{{ form_data.get('company', '') }}"
+                autocomplete="organization"
+              />
+            </div>
+
+            <!-- Email -->
+            <div class="form-group full">
+              <label for="email">Email <span class="req">*</span></label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="your@email.com"
+                value="{{ form_data.get('email', '') }}"
+                required
+                autocomplete="email"
+              />
+            </div>
+
+            <!-- Project Type -->
+            <div class="form-group">
+              <label for="project_type">Project Type <span class="req">*</span></label>
+              <select id="project_type" name="project_type" required>
+                <option value="" disabled {% if not form_data.get('project_type') %}selected{% endif %}>Select type...</option>
+                <option value="AI Agent Development"   {% if form_data.get('project_type') == 'AI Agent Development' %}selected{% endif %}>AI Agent Development</option>
+                <option value="Automation System"      {% if form_data.get('project_type') == 'Automation System' %}selected{% endif %}>Automation System</option>
+                <option value="Backend Engineering"    {% if form_data.get('project_type') == 'Backend Engineering' %}selected{% endif %}>Backend Engineering</option>
+                <option value="AI Platform"            {% if form_data.get('project_type') == 'AI Platform' %}selected{% endif %}>AI Platform</option>
+                <option value="Other"                  {% if form_data.get('project_type') == 'Other' %}selected{% endif %}>Other</option>
+              </select>
+            </div>
+
+            <!-- Budget -->
+            <div class="form-group">
+              <label for="budget">Budget Range</label>
+              <select id="budget" name="budget">
+                <option value="" disabled {% if not form_data.get('budget') %}selected{% endif %}>Select budget...</option>
+                <option value="Under ₹50,000"            {% if form_data.get('budget') == 'Under ₹50,000' %}selected{% endif %}>Under ₹50,000</option>
+                <option value="₹50,000 – ₹1,00,000"      {% if form_data.get('budget') == '₹50,000 – ₹1,00,000' %}selected{% endif %}>₹50,000 – ₹1,00,000</option>
+                <option value="₹1,00,000 – ₹5,00,000"    {% if form_data.get('budget') == '₹1,00,000 – ₹5,00,000' %}selected{% endif %}>₹1,00,000 – ₹5,00,000</option>
+                <option value="Custom / Discuss"          {% if form_data.get('budget') == 'Custom / Discuss' %}selected{% endif %}>Custom / Discuss</option>
+              </select>
+            </div>
+
+            <!-- Description -->
+            <div class="form-group full">
+              <label for="description">Project Description <span class="req">*</span></label>
+              <textarea
+                id="description"
+                name="description"
+                placeholder="Describe what you're trying to build or solve. The more detail, the better our response."
+                required
+                rows="5"
+              >{{ form_data.get('description', '') }}</textarea>
+            </div>
+
+          </div><!-- /form-grid -->
+
+          <div class="form-submit">
+            <button type="submit" class="btn btn-primary" id="submit-btn">
+              Start a Project
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+          </div>
+
+          <p style="font-size:0.8rem; color:var(--text-dim); margin-top:14px;">
+            <span style="color:var(--yellow);">*</span> Required fields. We never share your information.
+          </p>
+
+        </form>
+      </div><!-- /contact-form-wrap -->
+
+      <!-- ── Sidebar ────────────────────────────────────────── -->
+      <div class="contact-sidebar">
+
+        <div class="contact-info">
+          <h3>Get in touch directly</h3>
+
+          <div class="contact-detail">
+            <div class="contact-detail-icon">✉️</div>
+            <div class="contact-detail-text">
+              <strong>Email</strong>
+              <span><a href="mailto:rohithbuildslab@gmail.com" style="color:var(--yellow);">rohithbuildslab@gmail.com</a></span>
+            </div>
+          </div>
+
+          <div class="contact-detail">
+            <div class="contact-detail-icon">⏱️</div>
+            <div class="contact-detail-text">
+              <strong>Response time</strong>
+              <span>Within 24 hours</span>
+            </div>
+          </div>
+
+          <div class="contact-detail">
+            <div class="contact-detail-icon">📍</div>
+            <div class="contact-detail-text">
+              <strong>Based in</strong>
+              <span>India · Remote-first</span>
+            </div>
+          </div>
+
+          <div class="contact-detail">
+            <div class="contact-detail-icon">🔗</div>
+            <div class="contact-detail-text">
+              <strong>See our work</strong>
+              <span><a href="https://rohith-builds.onrender.com" target="_blank" rel="noopener" style="color:var(--yellow);">rohith-builds.onrender.com</a></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="guarantee-card">
+          <h4>Our commitment</h4>
+          <p>We review every inquiry personally. You'll get a genuine response — not a template — within 24 hours of submitting.</p>
+        </div>
+
+        <!-- What to expect -->
+        <div style="background:var(--surface); border:1px solid var(--border); border-radius:var(--radius-xl); padding:28px; margin-top:20px;">
+          <h4 style="font-size:0.9375rem; font-weight:700; margin-bottom:16px;">What happens next?</h4>
+          <div style="display:flex; flex-direction:column; gap:14px;">
+            <div style="display:flex; gap:12px; align-items:flex-start;">
+              <div style="width:24px; height:24px; background:var(--yellow-glow); border:1px solid rgba(251,191,36,0.2); border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:0.7rem; font-weight:700; color:var(--yellow); flex-shrink:0;">1</div>
+              <p style="font-size:0.875rem; color:var(--text-muted); line-height:1.5;">We review your project description and assess fit.</p>
+            </div>
+            <div style="display:flex; gap:12px; align-items:flex-start;">
+              <div style="width:24px; height:24px; background:var(--yellow-glow); border:1px solid rgba(251,191,36,0.2); border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:0.7rem; font-weight:700; color:var(--yellow); flex-shrink:0;">2</div>
+              <p style="font-size:0.875rem; color:var(--text-muted); line-height:1.5;">We reply with questions, a rough scope, or a direct proposal.</p>
+            </div>
+            <div style="display:flex; gap:12px; align-items:flex-start;">
+              <div style="width:24px; height:24px; background:var(--yellow-glow); border:1px solid rgba(251,191,36,0.2); border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:0.7rem; font-weight:700; color:var(--yellow); flex-shrink:0;">3</div>
+              <p style="font-size:0.875rem; color:var(--text-muted); line-height:1.5;">We agree on scope, timeline, and get to work.</p>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /contact-sidebar -->
+
+    </div><!-- /contact-layout -->
+  </div>
+</section>
+
+{% endblock %}
