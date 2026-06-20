@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% block title %}Work — Rohith Builds Labs{% endblock %}
-{% block meta_desc %}Case studies from Rohith Builds Labs: AI platforms, autonomous agents, automation systems, and content moderation tools — all deployed and in production.{% endblock %}
+{% block meta_desc %}Case studies from Rohith Builds Labs: AI platforms, autonomous agents, automation systems, and content moderation tools — all built and deployed by Rohith.{% endblock %}
 
 {% block content %}
 
@@ -104,8 +104,12 @@
             <span class="case-num">02</span>
             <span class="case-tag">Automation</span>
           </div>
-          <h2>Autonomous Job Aggregator</h2>
+          <h2>Autonomous Job Scraper &amp; AI Resume Matcher</h2>
         </div>
+        <a href="http://127.0.0.1:8001" target="_blank" rel="noopener" class="case-link" id="cs2-link">
+          Live Scraper
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 10L10 2M10 2H5M10 2v5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </a>
       </div>
 
       <div class="case-body">
@@ -115,22 +119,22 @@
         </div>
         <div class="case-col">
           <div class="case-col-label">Solution</div>
-          <p>AI agent scrapes LinkedIn, Naukri, and Indeed via RSS gateways. Groq filters junior-appropriate roles, deduplicates results, and auto-inserts into PostgreSQL daily.</p>
+          <p>Built a standalone portal that crawls LinkedIn, Naukri, and Indeed. Bypasses anti-bot controls, processes job descriptions with Groq Llama-3, parses PDF resumes via pypdf, and ranks fits with customized application pitches.</p>
         </div>
         <div class="case-col">
           <div class="case-col-label">Tech Stack</div>
           <div class="case-tech">
             <span class="tech-tag">Python</span>
             <span class="tech-tag">Groq</span>
-            <span class="tech-tag">psycopg2</span>
-            <span class="tech-tag">RSS</span>
-            <span class="tech-tag">AOL Gateway</span>
+            <span class="tech-tag">SQLite</span>
+            <span class="tech-tag">pypdf</span>
+            <span class="tech-tag">Flask</span>
           </div>
         </div>
       </div>
 
       <div class="case-results">
-        <p><strong>Results:</strong> 53+ curated junior developer jobs updated every day. Deduplication system prevents repeat entries. Runs fully autonomously without manual intervention.</p>
+        <p><strong>Results:</strong> Standalone dashboard with live log streaming. Auto-scraper processes feeds autonomously. Instant PDF parsing, fit scoring, and custom pitch generators.</p>
       </div>
     </article>
 
@@ -305,6 +309,71 @@
       </div>
     </article>
 
+    <!-- Case Study 6: CarbonWise Platform -->
+    <article class="case-study" id="case-carbonwise">
+      <!-- Video Preview -->
+      <div class="case-video-preview" data-video="{{ url_for('static', filename='videos/carbonwise.mp4') }}" data-title="CarbonWise Platform — Demo">
+        <div class="case-video-overlay">
+          <div class="play-btn" role="button" tabindex="0" aria-label="Watch demo for CarbonWise">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="12" cy="12" r="11" stroke="currentColor" stroke-width="1.5"/>
+              <path d="M10 8.5L16 12L10 15.5V8.5Z" fill="currentColor"/>
+            </svg>
+            <span>Watch Demo</span>
+          </div>
+          <div class="video-badge">
+            <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><circle cx="5" cy="5" r="4" fill="#3fb950"/></svg>
+            Video Demo
+          </div>
+        </div>
+      </div>
+
+      <div class="case-study-header">
+        <div>
+          <div class="case-study-meta">
+            <span class="case-num">06</span>
+            <span class="case-tag">AI Platform</span>
+          </div>
+          <h2>CarbonWise Platform</h2>
+        </div>
+        <div style="display: flex; gap: 12px; align-items: center;">
+          <a href="https://github.com/rohith1246/carbon-platform" target="_blank" rel="noopener" class="case-link" style="color: var(--text-muted);">
+            GitHub
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 10L10 2M10 2H5M10 2v5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </a>
+          <a href="https://carbon-platform-mya0.onrender.com/" target="_blank" rel="noopener" class="case-link" id="cs6-link">
+            Live Platform
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 10L10 2M10 2H5M10 2v5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="case-body">
+        <div class="case-col">
+          <div class="case-col-label">Challenge</div>
+          <p>Carbon calculators are often too complex or provide generic, unhelpful advice. Users need a reliable tool with actionable, context-aware AI reduction strategies.</p>
+        </div>
+        <div class="case-col">
+          <div class="case-col-label">Solution</div>
+          <p>Built a production-ready footprint platform with deterministic carbon calculations and Groq LLM (Llama 3.1) integration for personalized, structured JSON reduction tips.</p>
+        </div>
+        <div class="case-col">
+          <div class="case-col-label">Tech Stack</div>
+          <div class="case-tech">
+            <span class="tech-tag">Python</span>
+            <span class="tech-tag">Flask</span>
+            <span class="tech-tag">SQLite</span>
+            <span class="tech-tag">Groq</span>
+            <span class="tech-tag">Render</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="case-results">
+        <p><strong>Results:</strong> Built for PromptWars Virtual. Successfully deployed with robust database aggregation optimizations, secure headers, and WCAG AA accessibility compliance.</p>
+      </div>
+    </article>
+
   </div>
 </section>
 
@@ -313,7 +382,7 @@
   <div class="container" style="text-align:center;">
     <div class="label" style="margin-bottom:12px;">Ready to Build?</div>
     <h2 style="font-size:2rem; font-weight:700; letter-spacing:-0.02em; margin-bottom:12px;">Have a system that needs building?</h2>
-    <p style="color:var(--text-muted); margin-bottom:28px; max-width:480px; margin-left:auto; margin-right:auto;">We bring the same pragmatic, deployed-first approach to every project.</p>
+    <p style="color:var(--text-muted); margin-bottom:28px; max-width:480px; margin-left:auto; margin-right:auto;">I bring the same pragmatic, deployed-first approach to every project.</p>
     <a href="/contact" class="btn btn-primary btn-lg" id="work-cta-btn">Start a Project</a>
   </div>
 </section>

@@ -119,7 +119,7 @@ def contact():
         # Send email notification (silent fallback if not configured)
         send_email_notification(data)
 
-        flash("We'll review your project and get back within 24 hours.", 'success')
+        flash("I'll review your project and get back within 24 hours.", 'success')
         return redirect(url_for('contact'))
 
     return render_template('contact.html', form_data={})
@@ -178,9 +178,9 @@ BLOG_POSTS = [
 
 <h2>The Practical Version</h2>
 
-<p>At Rohith Builds Labs, we've built agents that run autonomously in production — job aggregators that update daily, research agents that synthesize web sources, Reddit automation systems that queue reply drafts continuously.</p>
+<p>At Rohith Builds Labs, I've built agents that run autonomously in production — job aggregators that update daily, research agents that synthesize web sources, Reddit automation systems that queue reply drafts continuously.</p>
 
-<p>None of them work because we found the perfect prompt. They work because we built them with failure in mind, added proper logging, handled rate limits explicitly, and designed for the actual conditions they'd run in — not the ideal conditions of a demo environment.</p>
+<p>None of them work because I found the perfect prompt. They work because I built them with failure in mind, added proper logging, handled rate limits explicitly, and designed for the actual conditions they'd run in — not the ideal conditions of a demo environment.</p>
 
 <p>If you're building an AI agent, spend less time on the prompt and more time on the infrastructure around it. The prompt is the easy part.</p>
 """
@@ -233,9 +233,9 @@ BLOG_POSTS = [
 
 <h2>Start With the Simpler Thing</h2>
 
-<p>When we scope new projects at Rohith Builds Labs, our default assumption is that automation is sufficient until proven otherwise. We look at what the task actually requires — not what sounds impressive in a pitch.</p>
+<p>When I scope new projects at Rohith Builds Labs, my default assumption is that automation is sufficient until proven otherwise. I look at what the task actually requires — not what sounds impressive in a pitch.</p>
 
-<p>If the problem can be solved with a cron job and a few API calls, that's what we build. If it genuinely requires an LLM to reason through unstructured context — we build an agent, and we build it to survive production.</p>
+<p>If the problem can be solved with a cron job and a few API calls, that's what I build. If it genuinely requires an LLM to reason through unstructured context — I build an agent, and I build it to survive production.</p>
 
 <p>The goal is always the simplest system that solves the actual problem. Not the most technically interesting system. Not the one that makes the best demo. The one that runs reliably when you're not watching it.</p>
 """
